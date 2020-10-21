@@ -1,6 +1,6 @@
 {% set name = "publish" %}
 {% set version = "1.0.1" %}
-{% set sha256 = "d46632db46a9e96effea239c3276e2094fe993815308b4fea143b8a99a3c154a" %}
+{% set sha256 = "575f513561ed6d7eb85ec1d55844c022bf4a70734b35a9b2be84bc251b42cfbc" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,11 @@ package:
 
 source:
   fn: "{{ name }} version {{ version }}.tar.gz"
-  url: https://bitbucket.org/logg/{{ name }}/get/{{ name }}%20version%20{{ version }}.tar.gz
+  url: https://github.com/doconce/{{ name }}/archive/{{ name }}%20version%20{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 1001
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
@@ -35,7 +35,7 @@ test:
     - publish --help
 
 about:
-  home: https://bitbucket.org/logg/publish
+  home: https://github.com/doconce/publish
   license: GPL-3
   license_family: GPL3
   license_file: COPYING
@@ -49,8 +49,8 @@ about:
     database of known venues, checks for missing attributes, corrects
     common errors etc, and allows simple filtering and generation of
     publication lists.
-  doc_url: https://bitbucket.org/logg/publish
-  dev_url: https://bitbucket.org/logg/publish
+  doc_url: https://github.com/doconce/publish
+  dev_url: https://github.com/doconce/publish
 
 extra:
   recipe-maintainers:
