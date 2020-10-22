@@ -12,8 +12,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1002
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
+  noarch: python
+  number: 1003
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
@@ -36,7 +37,7 @@ test:
 
 about:
   home: https://github.com/doconce/publish
-  license: GPL-3
+  license: GPL-3.0-or-later
   license_family: GPL3
   license_file: COPYING
   summary: 'publish: a bibliographic reference system'
