@@ -13,22 +13,24 @@ source:
 
 build:
   noarch: python
-  number: 1003
+  number: 1004
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - python
   host:
-    - python
+    - python {{ python_min }}
     - pip
   run:
-    - python
+    - python >={{ python_min }}
     - lxml
     - future
     - python-levenshtein
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - publish
 
